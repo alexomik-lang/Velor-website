@@ -1,256 +1,682 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VELOR — Built From Nothing</title>
-  <meta name="description" content="VELOR streetwear — oversized essentials built to stand out." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELOR — Built From Nothing. Made To Stand Out.</title>
   <style>
-    :root{
-      --bg:#0a0a0a;
-      --panel:#111;
-      --text:#f5f5f5;
-      --muted:#aaa;
-      --line:#262626;
-      --cream:#e9dfc8;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,sans-serif;
+
+    :root {
+      --black: #000000;
+      --cream: #F2EBDD;
+      --gold: #C9A227;
+      --white: #FFFFFF;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1200px;margin:auto;padding:0 22px}
-    header{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(12px);
-      background:rgba(10,10,10,.78);
-      border-bottom:1px solid rgba(255,255,255,.08);
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.5;
+      overflow-x: hidden;
     }
-    nav{
-      height:72px;display:flex;align-items:center;justify-content:space-between
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .brand{font-weight:800;letter-spacing:.28em;font-size:20px}
-    .navlinks{display:flex;gap:26px;font-size:14px;color:#d6d6d6}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid #fff;padding:13px 20px;
-      text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;
-      transition:.2s ease
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .btn:hover{background:#fff;color:#000}
-    .btn.filled{background:#fff;color:#000}
-    .btn.filled:hover{background:var(--cream);border-color:var(--cream)}
-    .hero{
-      min-height:84vh;
-      display:grid;grid-template-columns:1.05fr .95fr;
-      align-items:center;gap:60px;
-      padding:78px 0
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--black);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .eyebrow{
-      text-transform:uppercase;letter-spacing:.28em;color:#b5b5b5;font-size:11px
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    h1{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(58px,8vw,110px);
-      line-height:.86;margin:16px 0 26px;
-      font-weight:600
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: var(--white);
+      text-align: center;
+      flex: 1;
     }
-    .hero p{max-width:560px;color:#bbb;font-size:18px;line-height:1.65}
-    .actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-    .visual{
-      height:620px;border:1px solid var(--line);
-      background:
-        radial-gradient(circle at 55% 20%, #2a2a2a 0%, #161616 38%, #0b0b0b 76%);
-      position:relative;overflow:hidden;
+
+    .logo span {
+      color: var(--gold);
     }
-    .hoodie{
-      position:absolute;inset:12% 14% 8%;
-      background:#0d0d0d;
-      border:1px solid #242424;
-      border-radius:34px 34px 22px 22px;
-      box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+    nav {
+      display: flex;
+      gap: 40px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
     }
-    .hoodie:before{
-      content:"";
-      position:absolute;width:42%;height:27%;left:29%;top:-12%;
-      background:#0d0d0d;border:1px solid #242424;
-      border-bottom:none;border-radius:90px 90px 24px 24px;
+
+    nav a:hover {
+      color: var(--gold);
     }
-    .hoodie:after{
-      content:"";
-      position:absolute;left:18%;right:18%;bottom:9%;height:18%;
-      border:1px solid #242424;border-radius:0 0 18px 18px
+
+    .header-icons {
+      display: flex;
+      gap: 25px;
+      font-size: 18px;
     }
-    .chestmark{
-      position:absolute;left:20%;top:23%;
-      font-family:"Playfair Display",serif;font-size:22px;
-      letter-spacing:.22em
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
     }
-    .chestmark small{
-      display:block;font-family:"Playfair Display",serif;
-      font-style:italic;letter-spacing:0;font-size:12px;margin-top:4px;color:#ddd
+
+    /* ========== HERO ========== */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
     }
-    .section{padding:100px 0;border-top:1px solid var(--line)}
-    .sectionhead{
-      display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:34px
+
+    .hero h1 {
+      font-size: clamp(60px, 12vw, 140px);
+      font-weight: 900;
+      letter-spacing: 12px;
+      margin-bottom: 20px;
     }
-    .section h2{
-      font-family:"Playfair Display",serif;
-      font-size:48px;margin:0;font-weight:600
+
+    .hero p {
+      font-size: 16px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: var(--cream);
     }
-    .sectionhead p{color:#999;max-width:500px;line-height:1.6}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{border:1px solid var(--line);background:var(--panel);overflow:hidden}
-    .productart{
-      height:360px;background:linear-gradient(145deg,#161616,#090909);
-      display:flex;align-items:center;justify-content:center;
-      position:relative
+
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--cream);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
     }
-    .productart .word{
-      font-family:"Playfair Display",serif;
-      letter-spacing:.3em;font-size:32px;color:#f0f0f0
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--black);
     }
-    .productart .sig{
-      position:absolute;top:55%;
-      font-family:"Playfair Display",serif;font-style:italic;color:#cfcfcf
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--cream);
+      color: var(--cream);
     }
-    .design-card{position:relative}
-    .design-card .full-design{cursor:default}
-    .design-card a{display:block}
-    .design-showcase{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .design-card{border:1px solid var(--line);background:#0d0d0d;overflow:hidden}
-    .design-card img{display:block;width:100%;height:auto;background:#0a0a0a}
-    .design-caption{padding:18px;display:flex;justify-content:space-between;gap:20px;align-items:flex-end}
-    .design-caption .meta{display:block;margin-top:6px}
-    .design-caption>span{font-size:10px;letter-spacing:.18em;color:#888;white-space:nowrap}
-    .card .info{padding:18px 18px 22px}
-    .name{font-weight:700;margin-bottom:7px}
-    .meta{color:#919191;font-size:14px;display:flex;justify-content:space-between;gap:12px}
-    .manifesto{
-      display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center
+
+    .btn-outline:hover {
+      background: var(--cream);
+      color: var(--black);
     }
-    .quote{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(36px,5vw,66px);
-      line-height:1.05
+
+    /* ========== DROP 01 ========== */
+    .section {
+      padding: 100px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .manifesto p{color:#aaa;line-height:1.8;font-size:17px}
-    footer{border-top:1px solid var(--line);padding:42px 0 60px;color:#8f8f8f}
-    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:850px){
-      .navlinks{display:none}
-      .hero{grid-template-columns:1fr;padding-top:50px}
-      .visual{height:500px}
-      .grid{grid-template-columns:1fr}
-      .design-showcase{grid-template-columns:1fr}
-      .manifesto{grid-template-columns:1fr}
-      .sectionhead{align-items:start;flex-direction:column}
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aaa;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      margin-bottom: 20px;
+      background: #111;
+    }
+
+    .product-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .product-card .price {
+      font-size: 15px;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .product-card .view-btn {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--cream);
+      padding-bottom: 2px;
+      color: var(--cream);
+    }
+
+    .product-card .view-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ========== FEATURED ========== */
+    .featured {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .featured-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px;
+    }
+
+    .featured-text h2 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
+    }
+
+    .featured-text p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 15px;
+      max-width: 400px;
+    }
+
+    .featured-image {
+      background: url('https://images.unsplash.com/photo-1523381210470-080d5d3c0a0a?w=1200&q=80') center/cover no-repeat;
+    }
+
+    /* ========== STORY ========== */
+    .story {
+      background: var(--black);
+      text-align: center;
+      padding: 120px 30px;
+    }
+
+    .story h2 {
+      font-size: 14px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      margin-bottom: 30px;
+    }
+
+    .story .big {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.3;
+    }
+
+    .story p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    /* ========== SET ========== */
+    .set {
+      position: relative;
+      height: 80vh;
+      background: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .set::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .set-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .set-content h2 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      margin-bottom: 15px;
+    }
+
+    .set-content .price {
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 30px;
+    }
+
+    /* ========== BRAND STATEMENT ========== */
+    .brand-statement {
+      background: var(--black);
+      text-align: center;
+      padding: 140px 30px;
+    }
+
+    .brand-statement h2 {
+      font-size: clamp(40px, 8vw, 90px);
+      font-weight: 900;
+      letter-spacing: 6px;
+      line-height: 1.1;
+    }
+
+    .brand-statement h2 span {
+      display: block;
+      color: var(--cream);
+      font-size: 0.6em;
+      margin-top: 20px;
+      letter-spacing: 8px;
+    }
+
+    /* ========== INSTAGRAM ========== */
+    .instagram {
+      padding: 100px 30px;
+      text-align: center;
+    }
+
+    .instagram h2 {
+      font-size: 28px;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
+
+    .instagram .handle {
+      color: var(--gold);
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ig-grid img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* ========== NEWSLETTER ========== */
+    .newsletter {
+      background: var(--cream);
+      color: var(--black);
+      text-align: center;
+      padding: 100px 30px;
+    }
+
+    .newsletter h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .newsletter p {
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto;
+      gap: 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 18px 20px;
+      border: none;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      padding: 18px 35px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--black);
+      padding: 80px 30px 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      color: var(--gold);
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .featured {
+        grid-template-columns: 1fr;
+      }
+      .featured-image {
+        min-height: 400px;
+      }
+      .ig-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav, .header-icons {
+        display: none;
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .header-inner {
+        justify-content: space-between;
+      }
+      .logo {
+        flex: none;
+        font-size: 22px;
+      }
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .featured-text {
+        padding: 50px 30px;
+      }
+      .ig-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- 1. HEADER -->
   <header>
-    <div class="wrap">
+    <div class="header-inner">
+      <div class="mobile-menu">☰</div>
+      <div class="logo">VELOR</div>
       <nav>
-        <a class="brand" href="#">VELOR</a>
-        <div class="navlinks">
-          <a href="#shop">Shop</a>
-          <a href="#story">Story</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a class="btn" href="#shop">Shop Drop 01</a>
+        <a href="#">SHOP</a>
+        <a href="#">COLLECTION</a>
+        <a href="#">ABOUT</a>
       </nav>
+      <div class="header-icons">
+        <span>🔍</span>
+        <span>🛒</span>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="wrap hero">
-      <div>
-        <div class="eyebrow">VELOR / Drop 01</div>
-        <h1>Built From Nothing.</h1>
-        <p>Premium oversized streetwear made for people who want to stand out without trying too hard.</p>
-        <div class="actions">
-          <a class="btn filled" href="#shop">View the collection</a>
-          <a class="btn" href="#story">Our story</a>
-        </div>
-      </div>
-      <div class="visual" aria-label="VELOR hoodie visual">
-        <div class="hoodie">
-          <div class="chestmark">VELOR<small>signature</small></div>
-        </div>
-      </div>
-    </section>
+  <!-- 2. HERO -->
+  <section class="hero">
+    <h1>VELOR</h1>
+    <p>BUILT FROM NOTHING. MADE TO STAND OUT.</p>
+    <a href="#drop01" class="btn">SHOP DROP 01</a>
+  </section>
 
-    <section id="shop" class="section">
-      <div class="wrap">
-        <div class="sectionhead">
-          <div>
-            <div class="eyebrow">Drop 01</div>
-            <h2>Core Pieces</h2>
-          </div>
-          <p>Baggy silhouettes, heavyweight fabric and clean VELOR branding.</p>
-        </div>
-        <div class="design-showcase">
-          <article class="design-card">
-            <img class="full-design" src="./velor-core-collection.png"> alt="VELOR core collection hoodie, t-shirt and polo designs">
-            <div class="design-caption">
-              <div>
-                <div class="name">Core Collection</div>
-                <div class="meta">Hoodie · Oversized T-Shirt · Premium Polo</div>
-              </div>
-              <span>DROP 001</span>
-            </div>
-          </article>
-          <article class="design-card"> Velor Pants
-            <img class="Designer (1).Png" src="./Velor Baggy Pants and track pants"
-            <div class="design-caption">
-              <div>
-                <div class="name">Signature Pants</div>
-                <div class="meta">Baggy fit · Double side stripe · Heavyweight fleece</div>
-              </div>
-              <span>DROP 001</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="story" class="section">
-      <div class="wrap manifesto">
-        <div class="quote">“Turning a vision into a statement.”</div>
-        <div>
-          <div class="eyebrow">The idea</div>
-          <p>VELOR is about creating something from nothing. The brand is built around oversized streetwear, clean details and a simple identity that feels premium without being overdone.</p>
-          <p>Every piece is designed to feel wearable every day, while still looking different from the usual basics.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="wrap">
-        <div class="sectionhead">
-          <div>
-            <div class="eyebrow">Stay close</div>
-            <h2>Next drop coming soon.</h2>
-          </div>
-          <a class="btn filled" href="mailto:alexomik@icloud.com">Contact VELOR</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <div>© 2026 VELOR</div>
-      <div>Built from nothing. Made to stand out.</div>
+  <!-- 3. DROP 01 -->
+  <section class="section" id="drop01">
+    <div class="section-title">
+      <h2>DROP 01</h2>
+      <p>The first VELOR collection.</p>
     </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" alt="VELOR Signature Hoodie">
+        <h3>VELOR SIGNATURE HOODIE</h3>
+        <div class="price">$79.99</div>
+        <a href="#" class="view-btn">VIEW PRODUCT</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="VELOR Polo">
+        <h3>VELOR POLO</h3>
+        <div class="price">$69.99</div>
+        <a href="#" class="view-btn">VIEW PRODUCT</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842fbf?w=600&q=80" alt="VELOR Oversized Top">
+        <h3>VELOR OVERSIZED TOP</h3>
+        <div class="price">$69.99</div>
+        <a href="#" class="view-btn">VIEW PRODUCT</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?w=600&q=80" alt="VELOR Signature Pants">
+        <h3>VELOR SIGNATURE PANTS</h3>
+        <div class="price">$59.99</div>
+        <a href="#" class="view-btn">VIEW PRODUCT</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FEATURED COLLECTION -->
+  <section class="featured">
+    <div class="featured-text">
+      <h2>BUILT DIFFERENT.</h2>
+      <p>Designed for the streets.</p>
+      <p>Inspired by football.</p>
+      <p>Made for those who want to stand out.</p>
+      <br>
+      <a href="#" class="btn btn-outline">EXPLORE VELOR</a>
+    </div>
+    <div class="featured-image"></div>
+  </section>
+
+  <!-- 5. VELOR STORY -->
+  <section class="story">
+    <h2>THE STORY</h2>
+    <div class="big">Starting a brand is turning nothing into something.</div>
+    <p>VELOR was created from a vision to build something different — combining football, streetwear and a premium aesthetic into one identity.</p>
+    <a href="#" class="btn btn-outline">OUR STORY</a>
+  </section>
+
+  <!-- 6. FULL OUTFIT / SET -->
+  <section class="set">
+    <div class="set-content">
+      <h2>THE VELOR SET</h2>
+      <div class="price">$139.98</div>
+      <a href="#" class="btn">SHOP THE SET</a>
+    </div>
+  </section>
+
+  <!-- 7. BRAND STATEMENT -->
+  <section class="brand-statement">
+    <h2>
+      BUILT FROM NOTHING.
+      <span>MADE TO STAND OUT.</span>
+    </h2>
+  </section>
+
+  <!-- 8. INSTAGRAM -->
+  <section class="instagram">
+    <h2>FOLLOW VELOR</h2>
+    <div class="handle">@VELOR</div>
+    <div class="ig-grid">
+      <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1523381210470-080d5d3c0a0a?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842fbf?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?w=400&q=80" alt="">
+    </div>
+  </section>
+
+  <!-- 9. NEWSLETTER -->
+  <section class="newsletter">
+    <h2>DON'T MISS THE NEXT DROP.</h2>
+    <p>Sign up for VELOR updates and early access.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for joining VELOR!');">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">JOIN</button>
+    </form>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">VELOR</div>
+      </div>
+      <div class="footer-col">
+        <h4>SHOP</h4>
+        <a href="#">All Products</a>
+        <a href="#">Hoodies</a>
+        <a href="#">Tops</a>
+        <a href="#">Pants</a>
+      </div>
+      <div class="footer-col">
+        <h4>HELP</h4>
+        <a href="#">Contact</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>FOLLOW</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 VELOR</div>
   </footer>
+
 </body>
 </html>
