@@ -1,270 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VELOR | Beyond Limits</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#000;
-    color:#fff;
-}
-
-header{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-header h1{
-    font-size:5rem;
-    letter-spacing:10px;
-}
-
-header h2{
-    margin-top:10px;
-    font-size:2rem;
-}
-
-header p{
-    margin-top:20px;
-    color:#ccc;
-}
-
-.btn{
-    margin-top:30px;
-    background:#fff;
-    color:#000;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:30px;
-    font-weight:bold;
-}
-
-section{
-    padding:80px 10%;
-}
-
-.section-title{
-    font-size:2.5rem;
-    margin-bottom:40px;
-    text-align:center;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.product{
-    background:#111;
-    border:1px solid #222;
-    padding:30px;
-    border-radius:15px;
-    transition:0.3s;
-}
-
-.product:hover{
-    transform:translateY(-5px);
-}
-
-.product h3{
-    margin-bottom:10px;
-}
-
-.price{
-    font-size:2rem;
-    color:white;
-    margin:20px 0;
-}
-
-.product button{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:white;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.about{
-    background:#111;
-    border-radius:15px;
-    padding:40px;
-    text-align:center;
-}
-
-.contact-box{
-    background:#111;
-    border-radius:15px;
-    padding:40px;
-}
-
-.contact-box h3{
-    margin-bottom:20px;
-}
-
-.contact-info{
-    line-height:2;
-    margin-bottom:30px;
-}
-
-form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,
-textarea{
-    padding:15px;
-    background:#000;
-    border:1px solid #333;
-    color:white;
-}
-
-textarea{
-    height:150px;
-}
-
-form button{
-    padding:15px;
-    background:white;
-    color:black;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-footer{
-    text-align:center;
-    padding:40px;
-    border-top:1px solid #222;
-}
-
-footer h2{
-    margin-bottom:15px;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELOR — Built From Nothing</title>
+  <meta name="description" content="VELOR streetwear — oversized essentials built to stand out." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#111;
+      --text:#f5f5f5;
+      --muted:#aaa;
+      --line:#262626;
+      --cream:#e9dfc8;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:auto;padding:0 22px}
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(10,10,10,.78);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav{
+      height:72px;display:flex;align-items:center;justify-content:space-between
+    }
+    .brand{font-weight:800;letter-spacing:.28em;font-size:20px}
+    .navlinks{display:flex;gap:26px;font-size:14px;color:#d6d6d6}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid #fff;padding:13px 20px;
+      text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;
+      transition:.2s ease
+    }
+    .btn:hover{background:#fff;color:#000}
+    .btn.filled{background:#fff;color:#000}
+    .btn.filled:hover{background:var(--cream);border-color:var(--cream)}
+    .hero{
+      min-height:84vh;
+      display:grid;grid-template-columns:1.05fr .95fr;
+      align-items:center;gap:60px;
+      padding:78px 0
+    }
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:.28em;color:#b5b5b5;font-size:11px
+    }
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(58px,8vw,110px);
+      line-height:.86;margin:16px 0 26px;
+      font-weight:600
+    }
+    .hero p{max-width:560px;color:#bbb;font-size:18px;line-height:1.65}
+    .actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+    .visual{
+      height:620px;border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 55% 20%, #2a2a2a 0%, #161616 38%, #0b0b0b 76%);
+      position:relative;overflow:hidden;
+    }
+    .hoodie{
+      position:absolute;inset:12% 14% 8%;
+      background:#0d0d0d;
+      border:1px solid #242424;
+      border-radius:34px 34px 22px 22px;
+      box-shadow:0 30px 70px rgba(0,0,0,.45);
+    }
+    .hoodie:before{
+      content:"";
+      position:absolute;width:42%;height:27%;left:29%;top:-12%;
+      background:#0d0d0d;border:1px solid #242424;
+      border-bottom:none;border-radius:90px 90px 24px 24px;
+    }
+    .hoodie:after{
+      content:"";
+      position:absolute;left:18%;right:18%;bottom:9%;height:18%;
+      border:1px solid #242424;border-radius:0 0 18px 18px
+    }
+    .chestmark{
+      position:absolute;left:20%;top:23%;
+      font-family:"Playfair Display",serif;font-size:22px;
+      letter-spacing:.22em
+    }
+    .chestmark small{
+      display:block;font-family:"Playfair Display",serif;
+      font-style:italic;letter-spacing:0;font-size:12px;margin-top:4px;color:#ddd
+    }
+    .section{padding:100px 0;border-top:1px solid var(--line)}
+    .sectionhead{
+      display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:34px
+    }
+    .section h2{
+      font-family:"Playfair Display",serif;
+      font-size:48px;margin:0;font-weight:600
+    }
+    .sectionhead p{color:#999;max-width:500px;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);background:var(--panel);overflow:hidden}
+    .productart{
+      height:360px;background:linear-gradient(145deg,#161616,#090909);
+      display:flex;align-items:center;justify-content:center;
+      position:relative
+    }
+    .productart .word{
+      font-family:"Playfair Display",serif;
+      letter-spacing:.3em;font-size:32px;color:#f0f0f0
+    }
+    .productart .sig{
+      position:absolute;top:55%;
+      font-family:"Playfair Display",serif;font-style:italic;color:#cfcfcf
+    }
+    .design-card{position:relative}
+    .design-card .full-design{cursor:default}
+    .design-card a{display:block}
+    .design-showcase{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .design-card{border:1px solid var(--line);background:#0d0d0d;overflow:hidden}
+    .design-card img{display:block;width:100%;height:auto;background:#0a0a0a}
+    .design-caption{padding:18px;display:flex;justify-content:space-between;gap:20px;align-items:flex-end}
+    .design-caption .meta{display:block;margin-top:6px}
+    .design-caption>span{font-size:10px;letter-spacing:.18em;color:#888;white-space:nowrap}
+    .card .info{padding:18px 18px 22px}
+    .name{font-weight:700;margin-bottom:7px}
+    .meta{color:#919191;font-size:14px;display:flex;justify-content:space-between;gap:12px}
+    .manifesto{
+      display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center
+    }
+    .quote{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(36px,5vw,66px);
+      line-height:1.05
+    }
+    .manifesto p{color:#aaa;line-height:1.8;font-size:17px}
+    footer{border-top:1px solid var(--line);padding:42px 0 60px;color:#8f8f8f}
+    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:850px){
+      .navlinks{display:none}
+      .hero{grid-template-columns:1fr;padding-top:50px}
+      .visual{height:500px}
+      .grid{grid-template-columns:1fr}
+      .design-showcase{grid-template-columns:1fr}
+      .manifesto{grid-template-columns:1fr}
+      .sectionhead{align-items:start;flex-direction:column}
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>VELOR</h1>
-    <h2>BEYOND LIMITS.</h2>
-    <p>Luxury Streetwear. Premium Quality. Timeless Design.</p>
-    #shopSHOP DROP 001</a>
-</header>
-
-<section id="shop">
-    <h2 class="section-title">DROP 001</h2>
-
-    <div class="products">
-
-        <div class="product">
-2
- 
-3
-Designer.png
-4
- 
-5
-<h3>Signature Hoodie</h3>
-6
- 
-7
-<p>500 GSM heavyweight oversized hoodie with white sleeve stripes.</p>
-8
- 
-9
-<div class="price">$79.99</div>
-10
- 
-11
-<button>Add To Cart</button>
-12
- 
-13
-</div>
-            <p>500 GSM heavyweight oversized hoodie with white sleeve stripes.</p>
-            <div class="price">$79.99</div>
-            <button>Add To Cart</button>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#">VELOR</a>
+        <div class="navlinks">
+          <a href="#shop">Shop</a>
+          <a href="#story">Story</a>
+          <a href="#contact">Contact</a>
         </div>
-
-        <div class="product">
-            <h3>Oversized T-Shirt</h3>
-            <p>Heavyweight premium cotton tee featuring signature VELOR branding.</p>
-            <div class="price">$69.99</div>
-            <button>Add To Cart</button>
-        </div>
-
-        <div class="product">
-            <h3>Signature Track Pants</h3>
-            <p>Baggy fit sweatpants with double white side stripes.</p>
-            <div class="price">$59.99</div>
-            <button>Add To Cart</button>
-        </div>
-
+        <a class="btn" href="#shop">Shop Drop 01</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section>
-    <div class="about">
-        <h2 class="section-title">About VELOR</h2>
-        <p>
-            VELOR represents ambition, confidence and discipline.
-            Built for individuals pushing beyond limits, every piece
-            is designed with premium materials and a timeless aesthetic.
-        </p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="contact-box">
-
-        <h2 class="section-title">Contact Us</h2>
-
-        <div class="contact-info">
-            📞 0434 907 028<br>
-            📧 alexomik@icloud.com<br><br>
-
-            <strong>Support Hours</strong><br>
-
-            Monday - Friday: 4:30 PM - 7:30 PM<br>
-            Saturday: 12:00 PM - 3:00 PM<br>
-            Sunday: Closed
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">VELOR / Drop 01</div>
+        <h1>Built From Nothing.</h1>
+        <p>Premium oversized streetwear made for people who want to stand out without trying too hard.</p>
+        <div class="actions">
+          <a class="btn filled" href="#shop">View the collection</a>
+          <a class="btn" href="#story">Our story</a>
         </div>
+      </div>
+      <div class="visual" aria-label="VELOR hoodie visual">
+        <div class="hoodie">
+          <div class="chestmark">VELOR<small>signature</small></div>
+        </div>
+      </div>
+    </section>
 
-        <form>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">SEND MESSAGE</button>
-        </form>
+    <section id="shop" class="section">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">Drop 01</div>
+            <h2>Core Pieces</h2>
+          </div>
+          <p>Baggy silhouettes, heavyweight fabric and clean VELOR branding.</p>
+        </div>
+        <div class="design-showcase">
+          <article class="design-card">
+            <img class="full-design" src="velor-core-collection.png" alt="VELOR core collection hoodie, t-shirt and polo designs">
+            <div class="design-caption">
+              <div>
+                <div class="name">Core Collection</div>
+                <div class="meta">Hoodie · Oversized T-Shirt · Premium Polo</div>
+              </div>
+              <span>DROP 001</span>
+            </div>
+          </article>
+          <article class="design-card">
+            <img class="full-design" src="velor-pants.png" alt="VELOR baggy track pants design with double side stripes">
+            <div class="design-caption">
+              <div>
+                <div class="name">Signature Pants</div>
+                <div class="meta">Baggy fit · Double side stripe · Heavyweight fleece</div>
+              </div>
+              <span>DROP 001</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="story" class="section">
+      <div class="wrap manifesto">
+        <div class="quote">“Turning a vision into a statement.”</div>
+        <div>
+          <div class="eyebrow">The idea</div>
+          <p>VELOR is about creating something from nothing. The brand is built around oversized streetwear, clean details and a simple identity that feels premium without being overdone.</p>
+          <p>Every piece is designed to feel wearable every day, while still looking different from the usual basics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">Stay close</div>
+            <h2>Next drop coming soon.</h2>
+          </div>
+          <a class="btn filled" href="mailto:hello@velor.com">Contact VELOR</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 VELOR</div>
+      <div>Built from nothing. Made to stand out.</div>
     </div>
-</section>
-
-<footer>
-    <h2>VELOR™</h2>
-    <p>Beyond Limits.</p>
-</footer>
-
+  </footer>
 </body>
 </html>
